@@ -27,10 +27,13 @@ chinese_hellos = [
 ]
 
 module.exports = (robot) ->
-    robot.hear /(hi|hey)/i, (msg) ->
+    robot.hear /^(hi|hey)$/i, (msg) ->
         hello = msg.random hellos
         msg.send hello.replace "%", msg.message.user.name
 
     robot.hear /(你好|您好|大家好|有人在吗)/i, (msg) ->
         hello = msg.random chinese_hellos
         msg.send hello.replace "%", msg.message.user.name
+
+    robot.hear /^(robot|bot)$/i, (msg) ->
+        msg.send "You can type: robot help, see what i can do for you.",
