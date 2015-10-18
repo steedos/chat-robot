@@ -1,0 +1,22 @@
+{
+	"apps": [{
+		"name": "robot",
+		"max_memory_restart": "1024M",
+		"log_date_format": "YYYY-MM-DD HH:mm:ss SSS",
+		"script": "bin/hubot",
+		"exec_interpreter": "bash",
+		"args": "--adapter rocketchat",
+		"watch": ["package.json", "external-scripts.json", "scripts/", "hubot-scripts.json", "HUBOT_GITHUB_EVENT_NOTIFIER_TYPES=issues,pull_request,push bin/hubot"],
+		"out_file": "/var/log/robot/app.log",
+		"error_file": "/var/log/robot/err.log",
+		"port": "3080",
+		"env": {
+			"ROCKETCHAT_URL": "chat.steedos.com:3000",
+			"ROCKETCHAT_USER": "robot",
+			"ROCKETCHAT_ROOM": "GENERAL",
+			"ROCKETCHAT_PASSWORD": "",
+			"PORT": "3080",
+			"HUBOT_GITHUB_EVENT_NOTIFIER_TYPES": "issues,pull_request,push"
+		}
+	}]
+}
