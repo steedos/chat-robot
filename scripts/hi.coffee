@@ -27,7 +27,7 @@ chinese_hellos = [
 ]
 
 module.exports = (robot) ->
-    robot.hear /hi/i, (msg) ->
+    robot.hear /(hi|hey)/i, (msg) ->
         hello = msg.random hellos
         msg.send hello.replace "%", msg.message.user.name
 
