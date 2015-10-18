@@ -34,3 +34,5 @@ ecosystem.json
 
 .DS_Store*
 .hubot_history
+
+dev.sh
